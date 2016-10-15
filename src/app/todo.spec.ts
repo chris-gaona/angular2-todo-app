@@ -1,12 +1,18 @@
 /* tslint:disable:no-unused-variable */
 
-import {
-  describe,
-  expect
-} from '@angular/core/testing';
+import { TestBed, async } from '@angular/core/testing';
+import { AppComponent } from './app.component';
+
 import {Todo} from './todo';
 
 describe('Todo', () => {
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        AppComponent
+      ],
+    });
+  });
 
   it('should create an instance', () => {
     expect(new Todo()).toBeTruthy();
