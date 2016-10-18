@@ -4,7 +4,7 @@
     <li *ngFor="let todo of todos; let i = index">
       <input id="checkbox-{{i}}" class="checkbox-custom" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
       <label attr.for="checkbox-{{i}}" class="checkbox-custom-label"></label>
-      <span [class.done-true]="todo.complete">{{todo.title}}</span>
+      <span [class.done-true]="todo.complete" name="title" class="todo-text">{{todo.title}}</span>
       <button class="delete-btn" (click)="removeTodo(todo)">Delete</button>
     </li>
   </ul>
