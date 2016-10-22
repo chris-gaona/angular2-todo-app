@@ -13,7 +13,6 @@ import {Todo} from '../todo';
 export class TodoAppComponent implements OnInit {
 
   newTodo: Todo = new Todo();
-  editing: boolean = false;
 
   // Ask Angular DI system to inject the dependency
   // associated with the dependency injection token `TodoService`

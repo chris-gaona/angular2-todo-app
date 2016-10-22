@@ -18,6 +18,7 @@ export class TodoService {
     if (!todo.id) {
       todo.id = ++this.lastId;
     }
+
     this.todos.push(todo);
     return this;
   }
