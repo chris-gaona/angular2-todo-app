@@ -6,11 +6,13 @@ import {Todo} from '../todo';
   selector: 'app-todo-app',
   templateUrl: './todo-app.component.html',
   styleUrls: ['./todo-app.component.css'],
-  providers: [ TodoService ]
+  providers: [ TodoService ],
+
 })
 export class TodoAppComponent implements OnInit {
 
   newTodo: Todo = new Todo();
+  editing: boolean = false;
 
   // Ask Angular DI system to inject the dependency
   // associated with the dependency injection token `TodoService`
@@ -23,6 +25,23 @@ export class TodoAppComponent implements OnInit {
   addTodo() {
     this.todoService.addTodo(this.newTodo);
     this.newTodo = new Todo();
+  }
+
+  saveEdit(todo) {
+    let updatedTodo = this.todoService.updateTodoById(todo.id, {
+      title: todo.title,
+      editing: !todo.editing
+    });
+
+    return updatedTodo;
+  }
+
+  toggleTodoEdit(todo) {
+    let updatedTodo = this.todoService.updateTodoById(todo.id, {
+      editing: !todo.editing
+    });
+
+    return updatedTodo;
   }
 
   toggleTodoComplete(todo) {

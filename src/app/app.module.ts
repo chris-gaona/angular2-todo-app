@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { TodoAppComponent } from './todo-app/todo-app.component';
+import { FocusDirective } from './focus.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoAppComponent
+    TodoAppComponent,
+    FocusDirective
   ],
   imports: [
     BrowserModule,
