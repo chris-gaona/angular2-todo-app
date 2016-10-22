@@ -98,6 +98,21 @@ li {
   vertical-align: middle;
 }
 
+input.editing-input {
+  position: relative;
+  top: 3px;
+  padding: 0 10px;
+  font-size: 1em;
+}
+
+.editing-button {
+  font-size: .6em;
+  padding: 5px 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 
 /*Thank you to http://codepen.io/imohkay/pen/wyxuB*/
 .checkbox-custom {
