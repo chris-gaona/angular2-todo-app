@@ -5,8 +5,8 @@
       <input id="checkbox-{{i}}" class="checkbox-custom" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
       <label attr.for="checkbox-{{i}}" class="checkbox-custom-label"></label>
       <span [class.done-true]="todo.complete" name="title" class="todo-text" (click)="toggleTodoEdit(todo)" *ngIf="!todo.editing">{{todo.title}}</span>
-      <input type="text" inputFocus [(ngModel)]="todo.title" *ngIf="todo.editing" (keyup.enter)="saveEdit(todo)">
-      <button *ngIf="todo.editing" (click)="saveEdit(todo)">Save</button>
+      <input class="editing-input" type="text" appInputFocus [(ngModel)]="todo.title" *ngIf="todo.editing" (keyup.enter)="saveEdit(todo)">
+      <button class="editing-button" *ngIf="todo.editing" (click)="saveEdit(todo)">Save</button>
       <button class="delete-btn" (click)="removeTodo(todo)">Delete</button>
     </li>
   </ul>

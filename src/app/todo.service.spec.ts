@@ -94,4 +94,16 @@ describe('Service: Todo', () => {
       expect(updatedTodo.complete).toEqual(false);
     }));
   });
+
+  describe('#toggleTodoEdit(todo)', () => {
+    it('should return the updated todo with the inverse editing status', inject([TodoService], (service: TodoService) => {
+      let todo = new Todo({title: 'Hello', complete: false, editing: false});
+      service.addTodo(todo);
+
+      let updatedTodo = service.toggleTodoEdit(todo);
+      expect(updatedTodo.editing).toEqual(true);
+      service.toggleTodoEdit(todo);
+      expect(updatedTodo.editing).toEqual(false);
+    }));
+  });
 });

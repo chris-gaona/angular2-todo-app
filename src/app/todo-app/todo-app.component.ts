@@ -9,6 +9,7 @@ import {Todo} from '../todo';
   providers: [ TodoService ],
 
 })
+
 export class TodoAppComponent implements OnInit {
 
   newTodo: Todo = new Todo();
@@ -37,11 +38,7 @@ export class TodoAppComponent implements OnInit {
   }
 
   toggleTodoEdit(todo) {
-    let updatedTodo = this.todoService.updateTodoById(todo.id, {
-      editing: !todo.editing
-    });
-
-    return updatedTodo;
+    this.todoService.toggleTodoEdit(todo);
   }
 
   toggleTodoComplete(todo) {

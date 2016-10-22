@@ -58,4 +58,11 @@ export class TodoService {
     });
     return updatedTodo;
   }
+
+  toggleTodoEdit(todo: Todo) {
+    let updatedTodo = this.updateTodoById(todo.id, {
+      editing: !todo.editing
+    });
+    return updatedTodo;
+  }
 }
